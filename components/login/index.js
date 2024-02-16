@@ -18,17 +18,17 @@ export default function Login() {
     return (
         <section className={`loginPage publicPage`}>
             <div className="logoContainer">
-                {/* <Image
+                <Image
                     src={imagemLogo}
                     alt="Logotipo"
                     fill
-                /> */}
+                />
             </div>
             <div className="publicPageContent">
                 <form>
                     <InputPublico
                         imagem={imagemEnvelope}
-                        texto={"seuemail@mail.com"}
+                        texto={"Email"}
                         tipo={"email"}
                         aoAlterarValor={e => setEmail(e.target.value)}
                         valor={email}
