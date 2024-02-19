@@ -18,7 +18,9 @@ export default function Home() {
   console.log(imagem);
 
   return (
-    <Login />
+    <>
+      <Login />
+    </>
     
   )
 }
