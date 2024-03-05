@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export function UploadImg({
+export default function UploadImg({
     className = '',
     setImagem,
     imagemPreview,
@@ -46,7 +46,6 @@ export function UploadImg({
 
     return (
         <div className={`UploadImgContainer ${className}`} onClick={abrirSeletorArquivos}>
-            <button>AOBA</button>
             {imagemPreview && (
                 <div className="imagemPreviewContainer">
                     <img

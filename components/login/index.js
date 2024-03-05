@@ -30,7 +30,7 @@ export default function Login() {
                     <InputPublico
                         imagem={imagemEnvelope}
                         texto={"Email"}
-                        tipo={"email"}
+                        tipo={"email"} //O EDGE NAO VALIDA O EMAIL ENTAO DA ERRO DO HIBERNATE
                         aoAlterarValor={e => setEmail(e.target.value)}
                         valor={email}
                     />
