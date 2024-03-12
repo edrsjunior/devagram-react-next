@@ -3,6 +3,8 @@ import Image from "next/image";
 import Botao from "../botao";
 import Link from "next/link";
 import { useState } from "react";
+import { validarEmail, validarSenha } from "@/utils/validadores"
+
 
 import imagemEnvelope from "../../public/imagens/envelope.svg"
 import imagemKey from "../../public/imagens/chave.svg"
@@ -33,6 +35,8 @@ export default function Login() {
                         tipo={"email"} //O EDGE NAO VALIDA O EMAIL ENTAO DA ERRO DO HIBERNATE
                         aoAlterarValor={e => setEmail(e.target.value)}
                         valor={email}
+                        mensagemValidacao="O endereço informado é invalido!"
+                        exibirMensagemValidacao= {email && !validarEmail(email)}
                     />
                     <InputPublico
                         imagem={imagemKey}

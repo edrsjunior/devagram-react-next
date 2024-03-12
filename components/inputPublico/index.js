@@ -25,11 +25,8 @@ export default function InputPublico({
                     value={valor}
                     onChange={aoAlterarValor}
                 />
-                {
-                    exibirMensagemValidacao && <p className="mensagemValidacao">{mensagemValidacao}</p>
-                }
-               
             </div>
+            {exibirMensagemValidacao && <p className="mensagemValidacao">{mensagemValidacao}</p>}
         </div>
     )
 }
