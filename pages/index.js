@@ -1,14 +1,23 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Login from '@/components/login'
+import UsuarioService from '@/services/UsuarioService';
+import Home from '@/components/home';
 
 
+const usuarioService = new UsuarioService();
+export default function Index() {
 
-export default function Home() {
+  const [estaAutenticado, setEstaAutenticado] = useState(false);
 
-  const [imagem,setImagem] = useState(null);
-  const referenciaInput = useRef();
+  useEffect(() => {
+    setEstaAutenticado(
+      usuarioService.estaAutenticado()
+    );
+  }), [];
 
-  console.log(imagem);
+  if (estaAutenticado) {
+    return <Home/>
+  }
 
   return (
       <Login />

@@ -116,7 +116,7 @@ export default function Cadastro(){
                             tipo={"password"}
                             aoAlterarValor={e => setSenha(e.target.value)}
                             valor={senha}
-                            mensagemValidacao="A senha precisa possuir pelo menos 3 caracteres!"
+                            mensagemValidacao="A senha precisa possuir pelo menos 8 caracteres!"
                             exibirMensagemValidacao={senha && !validarSenha(senha)}
                         />
 

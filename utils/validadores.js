@@ -9,7 +9,7 @@ const validarEmail = (email) => {
 }
 
 const validarSenha = (senha) => {
-    return senha?.toString().length > 3;
+    return senha?.toString().length >= 8 ;
 }
 
 const validarSenhaConfirmacao = (senha, senhaConfirmacao) => {

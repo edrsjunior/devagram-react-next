@@ -46,7 +46,7 @@ export default function Login() {
             //TODO: REDIRECIONAR USER TO HOME PAGe
         } catch (error) {
             alert(
-                "Erro ao Realizar Login, " + error?.response?.data.erro
+                "Erro ao Realizar Login, " + error?.response?.data.error
             )
         }
 
@@ -81,7 +81,7 @@ export default function Login() {
                         tipo={"password"}
                         aoAlterarValor={e => setSenha(e.target.value)}
                         valor={senha}
-                        mensagemValidacao="Precisa ter pelo menos 3 caracteres!"
+                        mensagemValidacao="Precisa ter pelo menos 8 caracteres!"
                         exibirMensagemValidacao={senha && !validarSenha(senha)}
                     />
 
