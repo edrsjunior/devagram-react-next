@@ -20,6 +20,6 @@ export default function Index() {
   }
 
   return (
-      <Login />
+      <Login  aposAutenticado={() => setEstaAutenticado(true)}/>
   )
 }

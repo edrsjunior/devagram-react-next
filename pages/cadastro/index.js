@@ -15,7 +15,8 @@ import imagemKey from "../../public/imagens/chave.svg"
 import imagemLogo from "../../public/imagens/logo.svg"
 import imagemUsuarioAtivo from "../../public/imagens/usuario_Ativo.svg"
 import imagemUsuarioPhoto from "../../public/imagens/userPhoto.svg"
-import { toFormData } from "axios"
+import { useRouter } from "next/router"
+
 
 
 export default function Cadastro(){
@@ -26,6 +27,7 @@ export default function Cadastro(){
     const [confirmacaoSenha, setConfirmacaoSenha] = useState("");
     const [imagem, setImagem] = useState(null);
     const [estaSubmetendo, setEstaSubmetendo] = useState(false);
+    const router = useRouter();
 
     const validarFormulario = () =>{
         return (
@@ -57,13 +59,17 @@ export default function Cadastro(){
             }
 
             await usuarioService.cadastro(corpoReqCadastro);
+            await usuarioService.login({
+                login: email,
+                senha: senha
+            })
             
-            alert("Cadastrado com sucesso!");
-            //TODO: AUTENTICAR USUARIO AUTOMATICAMENTE APOS CADASTRO
+            router.push('/');
+            
 
         } catch (error) {
             alert(
-                "Erro ao cadastrar usuário, tente novamente mais tarde!" + error?.response?.data.erro
+                "Erro ao cadastrar usuário, tente novamente mais tarde!" + error?.response?.data.error
             )
         }
 
