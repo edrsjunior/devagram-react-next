@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "axios": "^1.6.5",
+    "formdata-polyfill": "^4.0.10",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.70.0"
   },
   "devDependencies": {
+    "axios-debug-log": "^1.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.3"
   }
