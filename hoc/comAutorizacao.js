@@ -1,3 +1,4 @@
+import Header from "@/components/layout/Header";
 import UsuarioService from "@/services/UsuarioService"
 import { useRouter } from "next/router";
 
@@ -13,7 +14,12 @@ export default function comAutorizacao(Componente){
                 router.replace('/');
                 return null;
             }
-            return <Componente {...props}/>
+            return (
+                <>
+                <Header/>
+                    <Componente {...props}/>
+                </>
+            );
         }
         return null;
     }
